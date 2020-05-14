@@ -119,7 +119,7 @@ function initBotConversation() {
                                     type: "invoke",
                                     name: "TriggerScenario",
                                     value: {
-                                        trigger: "covid19_assessment",
+                                        trigger: "choose",
                                         args: {region: region}
                                     }
                                 }
