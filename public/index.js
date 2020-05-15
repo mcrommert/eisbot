@@ -25,23 +25,23 @@ function requestChatBot() {
       //  requestChatBot();
     //}
 //}
-//function getUserLocation(callback) {
-  //  navigator.geolocation.getCurrentPosition(
-    //    function(position) {
-      //      var latitude  = position.coords.latitude;
-        //    var longitude = position.coords.longitude;
-          //  var location = {
-            //    lat: latitude,
-              //  long: longitude
-          //  }
-            //callback(location);
-        //},
-      //  function(error) {
-            // user declined to share location
-          //  console.log("location error:" + error.message);
-         //   callback();
-       // });
-//}
+function getUserLocation(callback) {
+    navigator.geolocation.getCurrentPosition(
+        function(position) {
+            var latitude  = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            var location = {
+               lat: latitude,
+               long: longitude
+            }
+            callback(location);
+        },
+       function(error) {
+             user declined to share location
+            console.log("location error:" + error.message);
+            callback();
+        });
+}
 //Suggestion for document referrer location
 //function getParentUrl() {
   //  var isInIframe = (parent !== window),
