@@ -119,7 +119,7 @@ function initBotConversation() {
                                     type: "invoke",
                                     name: "TriggerScenario",
                                     value: {
-                                        trigger: "",
+                                        trigger: "choose",
                                         args: {region: region}
                                     }
                                 }
