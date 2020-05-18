@@ -9,10 +9,9 @@ function requestChatBot() {
     if (params.has('region')) {
         path += "&region=" + params.get('region');
     }
-    if (loc) {
-        path += "&lat=" + loc.lat + "&long=" + loc.long;
-    }
-
+    //if (loc) {
+   //     path += "&lat=" + loc.lat + "&long=" + loc.long;
+  //  }
     oReq.open("POST", path);
     oReq.send();
 }
@@ -25,32 +24,30 @@ function requestChatBot() {
       //  requestChatBot();
     //}
 //}
-function getUserLocation(callback) {
-    navigator.geolocation.getCurrentPosition(
-        function(position) {
-            var latitude  = position.coords.latitude;
-            var longitude = position.coords.longitude;
-            var location = {
-               lat: latitude,
-               long: longitude
-            }
-            callback(location);
-        },
-       function(error) {
-             user declined to share location
-            console.log("location error:" + error.message);
-            callback();
-        });
-}
+//function getUserLocation(callback) {
+  //  navigator.geolocation.getCurrentPosition(
+    //    function(position) {
+      //      var latitude  = position.coords.latitude;
+        //    var longitude = position.coords.longitude;
+          //  var location = {
+            //    lat: latitude,
+              //  long: longitude
+          //  }
+            //callback(location);
+        //},
+      //  function(error) {
+            // user declined to share location
+          //  console.log("location error:" + error.message);
+         //   callback();
+       // });
+//}
 //Suggestion for document referrer location
 //function getParentUrl() {
   //  var isInIframe = (parent !== window),
     //    parentUrl = null;
-
     //if (isInIframe) {
       //  parentUrl = document.referrer;
     //}
-
     //return parentUrl;
 //}
 function initBotConversation() {
