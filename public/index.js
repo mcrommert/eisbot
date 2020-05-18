@@ -9,9 +9,9 @@ function requestChatBot() {
     if (params.has('region')) {
         path += "&region=" + params.get('region');
     }
-    //if (loc) {
-   //     path += "&lat=" + loc.lat + "&long=" + loc.long;
-  //  }
+    if (loc) {
+        path += "&lat=" + loc.lat + "&long=" + loc.long;
+    }
 
     oReq.open("POST", path);
     oReq.send();
