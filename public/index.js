@@ -109,20 +109,20 @@ function initBotConversation() {
 
                         // Use the following activity to proactively invoke a bot scenario
                         
-                      //  store.dispatch({
-                        //    type: 'DIRECT_LINE/POST_ACTIVITY',
-                        //    meta: {method: 'keyboard'},
-                          //   payload: {
-                          //       activity: {
-                              //       type: "invoke",
-                               //      name: "TriggerScenario",
-                                //     value: {
-                                  //       trigger: "",
-                                  //       args: {region: region}
-                           //          }
-                         //        }
-                        //     }
-                    //     });
+                        store.dispatch({
+                            type: 'DIRECT_LINE/POST_ACTIVITY',
+                            meta: {method: 'keyboard'},
+                             payload: {
+                                 activity: {
+                                     type: "invoke",
+                                     name: "TriggerScenario",
+                                     value: {
+                                         trigger: "choose",
+                                         args: {region: region}
+                                     }
+                                }
+                            }
+                        });
                         
                     }
                     return next(action);
