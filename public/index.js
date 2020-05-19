@@ -108,6 +108,8 @@ function initBotConversation() {
   bubbleNubOffset: 'bottom',
   bubbleNubSize: 0,
   bubbleTextColor: 'Black',
+  hideScrollToEndButton: false,
+
 }
 
     const store = window.WebChat.createStore(
