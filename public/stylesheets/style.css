@@ -17,17 +17,6 @@ body {
   height: 90%;
   width: 90%;
 }
-ul ul {
-  list-style-type: disc;
-}
-
-ul ul ul {
-  list-style-type: circle;
-}
-
-ul ul ul ul {
-  list-style-type: square;
-}
 
 button {
   font-size: 12px;
