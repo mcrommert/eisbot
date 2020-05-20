@@ -83,7 +83,7 @@ button.selected {
 
 .wc-message-wrapper {
   margin: 0 !important;
-  padding-bottom: 10px !important;
+  padding-bottom: 2px !important;
   align-items: flex-start; 
   justify-content: flex-start;
 }
