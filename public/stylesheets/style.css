@@ -17,20 +17,9 @@ body {
   height: 90%;
   width: 90%;
 }
-ul ul {
-  list-style-type: disc;
-}
-
-ul ul ul {
-  list-style-type: circle;
-}
-
-ul ul ul ul {
-  list-style-type: square;
-}
 
 button {
-  font-size: 12px;
+  font-size: 10px;
 }
 
 button.disabled {
@@ -47,7 +36,7 @@ button.selected {
 
 .content {
   float: left;
-  height: 85%;
+  height: 100%;
   align-items: flex-start; 
   justify-content: flex-start;
   padding-left: 5px;
@@ -55,7 +44,7 @@ button.selected {
 
 #botContainer {
   float: right;
-  height: 90%;
+  height: 100%;
   width: 260px;
   position: relative;
   align-items: flex-start; 
