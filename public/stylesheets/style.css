@@ -6,15 +6,6 @@ body {
 }
 
 
-
-.wc-message-wrapper {
-  margin: 0 !important;
-  padding-bottom: 2px !important;
-  align-items: flex-start; 
-  justify-content: flex-start;
-}
-
-
 #webchat[] [role="complementary"] ul[role="list"]::after {
   content: '';
   background: linear-gradient(rgba(248, 248, 248, 0), rgba(248, 248, 248, .63), #F8F8F8 40%);
