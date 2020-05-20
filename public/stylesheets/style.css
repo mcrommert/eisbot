@@ -14,8 +14,8 @@ body {
 }
 
 #webchat {
-  height: 90%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
 }
 ul ul {
   list-style-type: disc;
@@ -55,7 +55,7 @@ button.selected {
 
 #botContainer {
   float: right;
-  height: 80%;
+  height: 100%;
   width: 260px;
   position: relative;
   display: none;
