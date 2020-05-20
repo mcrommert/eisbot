@@ -42,42 +42,6 @@ button.selected {
   padding-left: 5px;
 }
 
-#botContainer {
-  float: right;
-  height: 100%;
-  width: 260px;
-  position: relative;
-  align-items: flex-start; 
-  justify-content: flex-start;
-  display: none;
-  border-width: 2px;
-  border-style: inset;
-}
-
--pane {
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-}
-
-.wc-message-group-content {
-  margin-top: 0px !important;
-}
-
-#flexSpacer {
-  align-self: flex-start;
-}
-
-.wc-message-groups {
-  scroll-behavior: smooth;
-}
-
-.wc-message-wrapper {
-  margin: 0 !important;
-  padding-bottom: 10px !important;
-  align-items: flex-start; 
-  justify-content: flex-start;
-}
-
-
 #webchat[] [role="complementary"] ul[role="list"]::after {
   content: '';
   background: linear-gradient(rgba(248, 248, 248, 0), rgba(248, 248, 248, .63), #F8F8F8 40%);
