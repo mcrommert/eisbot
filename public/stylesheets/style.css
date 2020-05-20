@@ -2,7 +2,7 @@ html,
 body {
   margin: 0;
   height: 100%;
-  scroll-behavior: smooth;
+  
 }
 
 
@@ -21,6 +21,7 @@ body {
   text-align: right;
   align-items: flex-start; 
   justify-content: flex-start;
+  scroll-behavior: smooth;
 }
 
 #webchat[] .webchat__scrollToEndButton {
