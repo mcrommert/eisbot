@@ -58,8 +58,8 @@ button.selected {
   height: 90%;
   width: 260px;
   position: relative;
-  align-items: flex-start; 
-  justify-content: flex-start;
+  align-items: stretch; 
+  justify-content: stretch;
   display: none;
   border-width: 2px;
   border-style: inset;
