@@ -12,6 +12,26 @@ body {
   width: 100%;
 }
 
+.content {
+  float: left;
+  height: 85%;
+  align-items: flex-start; 
+  justify-content: flex-start;
+  padding-left: 2px;
+}
+
+#botContainer {
+  float: right;
+  height: 90%;
+  width: 260px;
+  position: relative;
+  align-items: flex-start; 
+  justify-content: flex-start;
+  display: none;
+  border-width: 2px;
+  border-style: inset;
+}
+
 
 #webchat[] [role="complementary"] ul[role="list"]::after {
   content: '';
