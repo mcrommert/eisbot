@@ -3,6 +3,8 @@ html, body {
 }
 body {
   margin: 0;
+  scroll-behavior: smooth;
+
 }
 
 #webchat {
