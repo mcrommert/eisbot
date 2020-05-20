@@ -1,16 +1,11 @@
 html,
 body {
   margin: 0;
-  height: 10%;
+  height: 90%;
   scroll-behavior: smooth;
 }
 
-@media only screen and (max-width: 400px) {
-  /* For mobile phones: */
-  [class*="col-"] {
-    width: 100%;
-  }
-}
+
 
 .wc-message-wrapper {
   margin: 0 !important;
@@ -38,7 +33,7 @@ body {
 }
 
 #webchat[] .webchat__scrollToEndButton {
-  bottom: 32px;
+  bottom: 10px;
   left: 50%;
   right: unset;
   transform: translate(-50%, 0);
