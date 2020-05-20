@@ -1,14 +1,80 @@
-html, body {
-  height: 100%;
-}
+html,
 body {
   margin: 0;
+  height: 100%;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 #webchat {
   height: 100%;
   width: 100%;
 }
+ul ul {
+  list-style-type: disc;
+}
+
+ul ul ul {
+  list-style-type: circle;
+}
+
+ul ul ul ul {
+  list-style-type: square;
+}
+
+button {
+  font-size: 15px;
+}
+
+button.disabled {
+  background-color: #d9d9d9 !important;
+  color: #ffffff !important;
+  border-color: #cccccc !important;
+}
+
+button.selected {
+  background-color: #0078d7 !important;
+  color: white !important;
+  border-color: #cccccc !important;
+}
+
+.content {
+  float: left;
+  height: 100%;
+  padding-left: 10px;
+}
+
+#botContainer {
+  float: right;
+  height: 99%;
+  width: 460px;
+  position: relative;
+  display: none;
+  border-width: 2px;
+  border-style: inset;
+}
+
+-pane {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.wc-message-group-content {
+  margin-top: 0px !important;
+}
+
+#flexSpacer {
+  align-self: stretch;
+}
+
+.wc-message-groups {
+  scroll-behavior: smooth;
+}
+
+.wc-message-wrapper {
+  margin: 0 !important;
+  /* padding-bottom: 10px !important; */
+}
+
 
 #webchat[] [role="complementary"] ul[role="list"]::after {
   content: '';
@@ -31,3 +97,115 @@ body {
   right: unset;
   transform: translate(-50%, 0);
 }
+
+
+
+
+.webchat__stackedLayout--fromUser {
+  display: none !important;
+  margin-right: 6px;
+}
+
+.webchat__stackedLayout--fromUser.faq {
+  display: flex !important;
+}
+
+.webchat__row.message .webchat__bubble__content {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.webchat__stackedLayout__content {
+  border-radius: 2px;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+  padding: 8px;
+}
+
+.webchat__stackedLayout--fromUser .webchat__stackedLayout__content {
+  background-color: #0078d7;
+  color: #ffffff !important;
+  flex-grow: 0 !important;
+}
+
+.webchat__stackedLayout--fromUser
+  .webchat__stackedLayout__content
+  .webchat__row
+  .plain {
+  color: #ffffff !important;
+}
+
+.webchat__stackedLayout--fromUser
+  .webchat__stackedLayout__content
+  .webchat__row:not(.message)
+  span {
+  color: #eceff1 !important;
+}
+
+.webchat__stacked_indented_content .webchat__stackedLayout__content {
+  background-color: #eceff1;
+  max-width: 500px;
+}
+
+.webchat__stacked_indented_content {
+  margin-bottom: 15px;
+}
+
+.webchat__stackedLayout--fromUser {
+  margin-bottom: 30px;
+}
+
+/* TODO: fix user bubble style */
+
+/* 
+// legacy CSS
+.wc-message-callout {
+  display: none;
+}
+
+.point-right {
+  display: none !important;
+} 
+
+.wc-upload {
+  display: none !important;
+} 
+*/
+
+.ac-container {
+  outline: none !important;
+}
+
+.ac-pushButton {
+  outline: none !important;
+  cursor: pointer;
+}
+
+.ac-pushButton div {
+  white-space: pre-wrap !important;
+}
+
+.bubble {
+  min-width: 100px !important;
+  max-width: 600px !important;
+}
+
+.main {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.main {
+  border-top: 3px solid rgb(230, 230, 230) !important;
+  min-height: 50px !important;
+}
+
+
+.old-button {
+  cursor: not-allowed;
+  -webkit-tap-highlight-color: transparent;
+  outline: none !important;
+  pointer-events: none;
+}
+
