@@ -6,6 +6,13 @@ body {
   -webkit-text-size-adjust: 90%;
 }
 
+@media only screen and (max-width: 400px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+
 #webchat {
   height: 90%;
   width: 90%;
@@ -63,7 +70,7 @@ button.selected {
 }
 
 #flexSpacer {
-  align-self: stretch;
+  align-self: flex-start;
 }
 
 .wc-message-groups {
@@ -98,12 +105,6 @@ button.selected {
   transform: translate(-50%, 0);
 }
 
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  [class*="col-"] {
-    width: 90%;
-  }
-}
 
 .webchat__stackedLayout--fromUser {
   display: none !important;
