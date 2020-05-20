@@ -62,10 +62,6 @@ button.selected {
   border-width: 2px;
   border-style: inset;
 }
-div {
-  display: flex;  
-  flex-wrap: wrap;
-}
 
 -pane {
   -ms-overflow-style: -ms-autohiding-scrollbar;
