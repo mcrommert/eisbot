@@ -6,11 +6,15 @@ body {
   scroll-behavior: smooth;
 
 }
-@media only screen and (max-width: 400px) {
-  /* For mobile phones: */
-  [class*="col-"] {
-    width: 100%;
+@media screen and (max-width: 1020px) {
+  #container, #header, #content, #footer {
+    float: none;
+    width: auto;
   }
+ #subtitle, #share, #slider, #sidebar{
+    display:none;
+  }
+  p{ font-size: 2em; }
 }
 
 #webchat {
