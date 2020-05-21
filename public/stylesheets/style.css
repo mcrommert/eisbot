@@ -10,6 +10,7 @@ body {
   #container, #header, #content, #footer {
     float: none;
     width: auto;
+    font-size: small
   }
  #subtitle, #share, #slider, #sidebar{
     display:none;
