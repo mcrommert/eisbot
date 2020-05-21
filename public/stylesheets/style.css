@@ -16,6 +16,39 @@ body {
     display:none;
   }
   p{ font-size: 2em; }
+  #webchat {
+  height: 100%;
+  width: 100%;
+}
+
+button {
+  font-size: 10px;
+}
+
+.content {
+  float: left;
+  height: 100%;
+  align-items: flex-start; 
+  justify-content: flex-start;
+  padding-left: 2px;
+}
+
+#webchat[] [role="complementary"] ul[role="list"]::after {
+  content: '';
+  background: linear-gradient(rgba(248, 248, 248, 0), rgba(248, 248, 248, .63), #F8F8F8 40%);
+  bottom: 5;
+  right: 0;
+  color: #707070;
+  display: circle;
+  font-family: 'Segoe Semibold', Calibri, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 6px;
+  padding: 10px 5px 5px;
+  position: fixed;
+  position: sticky;
+  text-align: right;
+  align-items: flex-start; 
+  justify-content: flex-start;
+}
 }
 
 #webchat {
