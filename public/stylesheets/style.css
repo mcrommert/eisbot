@@ -51,18 +51,13 @@ body {
   overflow: visible !important;
 }
 
-/*
 #webchat div[role="complementary"] {
   padding-bottom: 100px;
 }
 
 #webchat [role="complementary"] ul[role="list"]::after {
   content: "";
-  background: linear-gradient(
-    rgba(248, 248, 248, 0),
-    rgba(248, 248, 248, 0.63),
-    #f8f8f8 40%
-  );
+  background: linear-gradient(rgba(248, 248, 248, 0), rgba(248, 248, 248, 0.63), #f8f8f8 40%);
   bottom: 5;
   right: 0;
   color: #707070;
@@ -76,30 +71,10 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
 }
-.speech-bubble {
-  position: relative;
-  background: #d02f80;
-  border-radius: 0.4em;
-}
 
-.speech-bubble:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border: 32px solid transparent;
-  border-bottom-color: #d02f80;
-  border-top: 0;
-  border-left: 0;
-  margin-left: -16px;
-  margin-top: -32px;
-}
 #webchat .webchat__scrollToEndButton {
   bottom: 32px;
   left: 50%;
   right: unset;
   transform: translate(-50%, 0);
 }
-*/
