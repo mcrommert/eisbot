@@ -96,13 +96,6 @@ function initBotConversation() {
     fontSizeSmall: "80%",
     monospaceFont: "Consolas, Courier New, monospace",
     primaryFont: "Calibri, Helvetica Neue, Arial, sans-serif",
-    // monospaceFont: fontFamily(["Consolas", "Courier New", "monospace"]),
-    // primaryFont: fontFamily([
-    //   "Calibri",
-    //   "Helvetica Neue",
-    //   "Arial",
-    //   "sans-serif",
-    // ]),
 
     // Avatar
     avatarBorderRadius: "50%",
@@ -320,7 +313,7 @@ function startChat(user, webchatOptions) {
 //
 //the following code is added to control the availability of buttons from previous selections.  effect is once a selection is made, you can not go back
 //
-
+/*
 setInterval(function () {
   // remove all buttons except the selected one, change its color, and make unclickable
   var buttons = document.getElementsByClassName("ac-pushButton");
@@ -333,6 +326,12 @@ setInterval(function () {
     }
   }
 }, 10);
+*/
+document.getElementById("webchat").addEventListener("click", function (event) {
+  selectOption(event);
+  adaptiveCardsOption(event);
+  selectParentOption(event);
+});
 
 function selectOption(event) {
   disableButtons(event.target);
