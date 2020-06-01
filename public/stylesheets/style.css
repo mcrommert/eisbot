@@ -48,7 +48,7 @@ body {
 }
 
 #webchat .ac-textBlock {
-  overflow: visible;
+  overflow: visible !important;
 }
 
 /*
