@@ -378,6 +378,7 @@ Array.prototype.findIndex =
     return -1;
   };
 
+/* TEMPORARILY REMOVE FROM POLYFILL
 !(function () {
   "use strict";
   function o(o) {
@@ -606,3 +607,4 @@ Array.prototype.findIndex =
     e = document;
   "object" == typeof exports ? (module.exports = { polyfill: t }) : t();
 })();
+*/
