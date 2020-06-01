@@ -108,7 +108,6 @@ function initBotConversation() {
     avatarBorderRadius: "50%",
     avatarSize: 40,
     botAvatarBackgroundColor: undefined, // defaults to accent color
-    // botAvatarBackgroundColor: "#555659",
 
     botAvatarImage: "",
     botAvatarInitials: "C",
@@ -118,7 +117,7 @@ function initBotConversation() {
     // Bubble
     // TODO: Should we make a bubbleFromBot*
     bubbleBackground: "White",
-    bubbleBorderColor: "#AF292E",
+    bubbleBorderColor: "#E6E6E6",
     bubbleBorderRadius: 2,
     bubbleBorderStyle: "solid",
     bubbleBorderWidth: 1,
@@ -263,40 +262,6 @@ function initBotConversation() {
     toastSuccessColor: "#107C10",
     toastWarnBackgroundColor: "#FFF4CE",
     toastWarnColor: "#3B3A39",
-  };
-  const styleOptions_OLD = {
-    // avatarBorderRadius: '50%',
-    // avatarSize: 40,
-    botAvatarBackgroundColor: "#555659",
-    // botAvatarImage: 'https://media-exp1.licdn.com/dms/image/C4E0BAQEclA3Vh3sTNw/company-logo_200_200/0?e=2159024400&v=beta&t=KD7qFl36K5BdZmGGqu1k8uZD-wYIn47CW_nR5f0l1z4',
-    // userAvatarImage: '',
-    richCardWrapTitle: true,
-    hideSendBox: false /* set to true to hide the send box from the view */,
-    botAvatarInitials: "C",
-    userAvatarInitials: "You",
-    backgroundColor: "#F8F8F8",
-    // Bubble
-    bubbleBackground: "White",
-    bubbleBorderColor: "#E6E6E6",
-    bubbleBorderRadius: 2,
-    bubbleBorderStyle: "solid",
-    bubbleBorderWidth: 1,
-    bubbleFromUserBackground: "White",
-    bubbleFromUserBorderColor: "#E6E6E6",
-    bubbleFromUserBorderRadius: 2,
-    bubbleFromUserBorderStyle: "solid",
-    bubbleFromUserBorderWidth: 1,
-    bubbleFromUserNubOffset: "bottom",
-    bubbleFromUserNubSize: 0,
-    bubbleFromUserTextColor: "Black",
-    bubbleImageHeight: 240,
-    bubbleMaxWidth: 480, // screen width = 600px
-    bubbleMinHeight: 40,
-    bubbleMinWidth: 250, // min screen width = 300px, Edge requires 372px (https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/13621468/)
-    bubbleNubOffset: "bottom",
-    bubbleNubSize: 0,
-    bubbleTextColor: "Black",
-    hideScrollToEndButton: false,
   };
 
   const store = window.WebChat.createStore({}, function (store) {
