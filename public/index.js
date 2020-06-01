@@ -313,20 +313,7 @@ function startChat(user, webchatOptions) {
 //
 //the following code is added to control the availability of buttons from previous selections.  effect is once a selection is made, you can not go back
 //
-/*
-setInterval(function () {
-  // remove all buttons except the selected one, change its color, and make unclickable
-  var buttons = document.getElementsByClassName("ac-pushButton");
-  for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("click", selectOption);
-    buttons[i].addEventListener("click", adaptiveCardsOption);
-    var allChildren = buttons[i].childNodes;
-    for (let j = 0; j < allChildren.length; j++) {
-      allChildren[j].addEventListener("click", selectParentOption);
-    }
-  }
-}, 10);
-*/
+
 document.getElementById("webchat").addEventListener("click", function (event) {
   selectOption(event);
   adaptiveCardsOption(event);
