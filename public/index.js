@@ -75,17 +75,15 @@ function initBotConversation() {
     domain: domain,
   });
 
-  function fontFamily(fonts) {
-    return fonts.map((font) => `'${font}'`).join(", ");
-  }
-  var DEFAULT_ACCENT = "#0063B1";
-  var DEFAULT_SUBTLE = "#767676"; // With contrast 4.5:1 to white
-  var PADDING_REGULAR = 10;
+  // const DEFAULT_ACCENT = "#0063B1";
+  const DEFAULT_ACCENT = "#AF292E";
+  const DEFAULT_SUBTLE = "#767676"; // With contrast 4.5:1 to white
+  const PADDING_REGULAR = 10;
 
-  var styleOptions = {
+  const styleOptions = {
     // Color and paddings
     accent: DEFAULT_ACCENT,
-    backgroundColor: "White",
+    backgroundColor: "#F8F8F8",
     cardEmphasisBackgroundColor: "#F0F0F0",
     paddingRegular: PADDING_REGULAR,
     paddingWide: PADDING_REGULAR * 2,
@@ -110,16 +108,17 @@ function initBotConversation() {
     avatarBorderRadius: "50%",
     avatarSize: 40,
     botAvatarBackgroundColor: undefined, // defaults to accent color
+    // botAvatarBackgroundColor: "#555659",
+
     botAvatarImage: "",
-    botAvatarInitials: "",
+    botAvatarInitials: "C",
     userAvatarBackgroundColor: undefined, // defaults to accent color
     userAvatarImage: "",
-    userAvatarInitials: "",
-
+    userAvatarInitials: "You",
     // Bubble
     // TODO: Should we make a bubbleFromBot*
     bubbleBackground: "White",
-    bubbleBorderColor: "#E6E6E6",
+    bubbleBorderColor: "#AF292E",
     bubbleBorderRadius: 2,
     bubbleBorderStyle: "solid",
     bubbleBorderWidth: 1,
@@ -143,7 +142,7 @@ function initBotConversation() {
     markdownRespectCRLF: true,
 
     // Rich Cards
-    richCardWrapTitle: false, // Applies to subtitles as well
+    richCardWrapTitle: true, // Applies to subtitles as well
 
     // Root
     rootHeight: "100%",
