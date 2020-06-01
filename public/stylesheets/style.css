@@ -10,6 +10,7 @@ body {
 
 #webchat {
   height: 100vh;
+  padding-bottom: 40px;
 }
 
 #webchat div[role="complementary"] {
@@ -53,7 +54,11 @@ body {
 
 #webchat [role="complementary"] ul[role="list"]::after {
   content: "";
-  background: linear-gradient(rgba(248, 248, 248, 0), rgba(248, 248, 248, 0.63), #f8f8f8 40%);
+  background: linear-gradient(
+    rgba(248, 248, 248, 0),
+    rgba(248, 248, 248, 0.63),
+    #f8f8f8 40%
+  );
   bottom: 5;
   right: 0;
   color: #707070;
