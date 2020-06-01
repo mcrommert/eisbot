@@ -398,7 +398,7 @@ function grayButton(button) {
 }
 
 function blueButton(button) {
-  button.style.backgroundColor = "#0078d7";
+  button.style.backgroundColor = DEFAULT_ACCENT;
   button.style.color = "white";
   button.height = "37px";
 }
