@@ -75,6 +75,9 @@ function initBotConversation() {
     domain: domain,
   });
 
+  function fontFamily(fonts) {
+    return fonts.map((font) => `'${font}'`).join(", ");
+  }
   var DEFAULT_ACCENT = "#0063B1";
   var DEFAULT_SUBTLE = "#767676"; // With contrast 4.5:1 to white
   var PADDING_REGULAR = 10;
