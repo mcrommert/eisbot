@@ -146,7 +146,7 @@ function initBotConversation() {
 
     // Send box
     hideSendBox: false,
-    hideUploadButton: false,
+    hideUploadButton: true,
     microphoneButtonColorOnDictate: "#F33",
     sendBoxBackground: "White",
     sendBoxButtonColor: undefined, // defaults to subtle
