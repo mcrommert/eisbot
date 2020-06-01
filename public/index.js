@@ -357,19 +357,17 @@ function disableParentButtons(children, targetButton) {
         break;
       }
     }
-    if (children[i].nodeName === "BUTTON" && !alreadhClicked) {
-      if (children[i].innerText) {
-        children[i].classList.add("disabled");
-        setTimeout(function () {
-          if (children[i] != null) {
-            children[i].onclick = "null";
-          }
-        }, 50);
-        children[i].removeEventListener("click", selectOption);
-        children[i].style.outline = "none";
-        children[i].style.cursor = "default";
-      }
-    }
+    // if (children[i].nodeName === "BUTTON" && !alreadhClicked) {
+    //   if (children[i].innerText) {
+    //     children[i].classList.add("disabled");
+    //     setTimeout(function () {
+    //       if (children[i] != null) {
+    //         children[i].onclick = "null";
+    //       }
+    //     }, 50);
+    //     children[i].removeEventListener("click", selectOption);
+    //   }
+    // }
   }
 }
 
@@ -397,16 +395,13 @@ function disableButtons(targetButton) {
     return;
   }
   targetButton.classList.add("disabled");
-  targetButton.parentNode.parentNode.parentNode.parentNode.style.cursor =
-    "not-allowed";
+  // targetButton.parentNode.parentNode.parentNode.parentNode.style.cursor =
+  //   "not-allowed";
   var allChildren = targetButton.parentNode.childNodes;
   for (let i = 0; i < allChildren.length; i++) {
     if (allChildren[i].innerText) {
       allChildren[i].classList.add("disabled");
-      allChildren[i].onclick = "null";
       allChildren[i].removeEventListener("click", selectOption);
-      allChildren[i].style.outline = "none";
-      allChildren[i].style.cursor = "default";
     }
   }
 }
