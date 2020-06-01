@@ -41,6 +41,12 @@ body {
   cursor: not-allowed;
 }
 
+#webchat .from-user.avatar {
+  background-color: #fff;
+  color: #af292e;
+  border: 2px solid #af292e;
+}
+
 /*
 #webchat div[role="complementary"] {
   padding-bottom: 100px;
