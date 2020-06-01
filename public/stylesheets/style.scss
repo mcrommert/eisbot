@@ -9,18 +9,16 @@ body {
   scroll-behavior: smooth;
 }
 
-.content {
-  float: left;
-  height: 100%;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding-left: 5px;
-}
+// .content {
+//   float: left;
+//   height: 100%;
+//   align-items: flex-start;
+//   justify-content: flex-start;
+//   padding-left: 5px;
+// }
 
 #webchat {
-  div[role="complementary"] {
-    padding-bottom: 100px;
-  }
+  height: calc(100vh - 40px);
 
   button.ac-pushButton {
     border-radius: 8px;
@@ -46,12 +44,8 @@ body {
     border: 2px solid $primaryColor;
   }
   .ac-textBlock {
-    overflow: visible;
+    overflow: visible !important;
   }
-}
-/*
-#webchat div[role="complementary"] {
-  padding-bottom: 100px;
 }
 
 #webchat [role="complementary"] ul[role="list"]::after {
@@ -74,30 +68,10 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
 }
-.speech-bubble {
-  position: relative;
-  background: #d02f80;
-  border-radius: 0.4em;
-}
 
-.speech-bubble:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border: 32px solid transparent;
-  border-bottom-color: #d02f80;
-  border-top: 0;
-  border-left: 0;
-  margin-left: -16px;
-  margin-top: -32px;
-}
 #webchat .webchat__scrollToEndButton {
   bottom: 32px;
   left: 50%;
   right: unset;
   transform: translate(-50%, 0);
 }
-*/
