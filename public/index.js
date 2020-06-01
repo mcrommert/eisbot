@@ -96,13 +96,15 @@ function initBotConversation() {
 
     // Fonts
     fontSizeSmall: "80%",
-    monospaceFont: fontFamily(["Consolas", "Courier New", "monospace"]),
-    primaryFont: fontFamily([
-      "Calibri",
-      "Helvetica Neue",
-      "Arial",
-      "sans-serif",
-    ]),
+    monospaceFont: "Consolas, Courier New, monospace",
+    primaryFont: "Calibri, Helvetica Neue, Arial, sans-serif",
+    // monospaceFont: fontFamily(["Consolas", "Courier New", "monospace"]),
+    // primaryFont: fontFamily([
+    //   "Calibri",
+    //   "Helvetica Neue",
+    //   "Arial",
+    //   "sans-serif",
+    // ]),
 
     // Avatar
     avatarBorderRadius: "50%",
