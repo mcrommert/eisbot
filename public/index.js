@@ -233,7 +233,7 @@ function disableParentButtons(children, targetButton) {
         } else {
           blueButton(children[i]);
         }
-        children[i].classList.remove("ac-pushButton");
+        // children[i].classList.remove("ac-pushButton");
         children[i].classList.add("old-button");
         setTimeout(function () {
           if (children[i] != null) {
@@ -281,7 +281,7 @@ function disableButtons(targetButton) {
       if (allChildren[i].innerText !== targetButton.innerText) {
         grayButton(allChildren[i]);
       }
-      allChildren[i].classList.remove("ac-pushButton");
+      // allChildren[i].classList.remove("ac-pushButton");
       allChildren[i].classList.add("old-button");
       allChildren[i].onclick = "null";
       allChildren[i].removeEventListener("click", selectOption);
