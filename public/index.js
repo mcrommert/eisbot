@@ -326,7 +326,7 @@ setInterval(function () {
   var buttons = document.getElementsByClassName("ac-pushButton");
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", selectOption);
-    // buttons[i].addEventListener("click", adaptiveCardsOption);
+    buttons[i].addEventListener("click", adaptiveCardsOption);
     var allChildren = buttons[i].childNodes;
     for (let j = 0; j < allChildren.length; j++) {
       allChildren[j].addEventListener("click", selectParentOption);
@@ -344,18 +344,22 @@ function selectParentOption(event) {
   //parentNode.parentNode
 }
 
-// function adaptiveCardsOption(event) {
-//     var columnSet = $(event.target).closest(".ac-columnSet")[0];
-//     if (columnSet) {
-//         var buttonsInColumnSets = columnSet.childNodes;
-//         for (let j = 0; j < buttonsInColumnSets.length; j++) {
-//             var columnSetButtons = buttonsInColumnSets[j].querySelectorAll("button");
-//             if (columnSetButtons) {
-//                 disableParentButtons(columnSetButtons, event.target.parentNode.parentNode.innerText);
-//             }
-//         }
-//     }
-// }
+function adaptiveCardsOption(event) {
+  // var columnSet = $(event.target).closest(".ac-columnSet")[0];
+  var columnSet = event.target.closest(".ac-columnSet");
+  if (columnSet) {
+    var buttonsInColumnSets = columnSet.childNodes;
+    for (let j = 0; j < buttonsInColumnSets.length; j++) {
+      var columnSetButtons = buttonsInColumnSets[j].querySelectorAll("button");
+      if (columnSetButtons) {
+        disableParentButtons(
+          columnSetButtons,
+          event.target.parentNode.parentNode.innerText
+        );
+      }
+    }
+  }
+}
 // function grayButton(button) {
 //   button.style.backgroundColor = "#d9d9d9";
 //   button.style.color = "#ffffff";
