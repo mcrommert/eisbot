@@ -260,6 +260,9 @@ function initBotConversation() {
   const store = window.WebChat.createStore({}, function (store) {
     return function (next) {
       return function (action) {
+        if (action.type === 'DIRECT_LINE/POST_ACTIVITY_FULFILLED') {
+            document.querySelector('ul[role="list"]').lastChild.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }
         if (action.type === "DIRECT_LINE/CONNECT_FULFILLED") {
           // Use the following activity to enable an authenticated end user experience
           /*
