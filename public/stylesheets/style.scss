@@ -1,8 +1,9 @@
+$primaryColor: #af292e;
+
 html,
 body {
   height: 100%;
 }
-
 body {
   margin: 0;
   scroll-behavior: smooth;
@@ -16,41 +17,38 @@ body {
   padding-left: 5px;
 }
 
-#webchat div[role="complementary"] {
-  padding-bottom: 100px;
-}
+#webchat {
+  div[role="complementary"] {
+    padding-bottom: 100px;
+  }
 
-#webchat button.ac-pushButton {
-  border-radius: 8px;
-  background-color: #af292e;
-  color: #fff;
-  cursor: pointer;
-}
+  button.ac-pushButton {
+    border-radius: 8px;
+    background-color: $primaryColor;
+    color: #fff;
+    cursor: pointer;
+    &:hover {
+      background-color: darken($primaryColor, 10);
+    }
+    &:active {
+      background-color: darken($primaryColor, 10);
+    }
 
-#webchat button.ac-pushButton:hover {
-  background-color: #861f23;
+    &.disabled {
+      background-color: #ddd;
+      color: #bbb;
+      cursor: not-allowed;
+    }
+  }
+  .from-user.avatar {
+    background-color: #fff;
+    color: $primaryColor;
+    border: 2px solid $primaryColor;
+  }
+  .ac-textBlock {
+    overflow: visible;
+  }
 }
-
-#webchat button.ac-pushButton:active {
-  background-color: #861f23;
-}
-
-#webchat button.ac-pushButton.disabled {
-  background-color: #ddd;
-  color: #bbb;
-  cursor: not-allowed;
-}
-
-#webchat .from-user.avatar {
-  background-color: #fff;
-  color: #af292e;
-  border: 2px solid #af292e;
-}
-
-#webchat .ac-textBlock {
-  overflow: visible;
-}
-
 /*
 #webchat div[role="complementary"] {
   padding-bottom: 100px;
