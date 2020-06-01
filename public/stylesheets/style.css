@@ -16,7 +16,6 @@ body {
   border-radius: 8px;
   background-color: #af292e;
   color: #fff;
-  white-space: normal !important;
   cursor: pointer;
 }
 
@@ -32,6 +31,10 @@ body {
   background-color: #ddd;
   color: #bbb;
   cursor: not-allowed;
+}
+
+#webchat button.ac-pushButton div {
+  white-space: normal !important;
 }
 
 #webchat .from-user.avatar {
