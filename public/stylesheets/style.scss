@@ -24,6 +24,7 @@ body {
     border-radius: 8px;
     background-color: $primaryColor;
     color: #fff;
+    white-space: normal !important; // Temp fix for button wrapping caused by inline "nowrap" value.
     cursor: pointer;
     &:hover {
       background-color: darken($primaryColor, 10);

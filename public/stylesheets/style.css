@@ -16,6 +16,7 @@ body {
   border-radius: 8px;
   background-color: #af292e;
   color: #fff;
+  white-space: normal !important;
   cursor: pointer;
 }
 
