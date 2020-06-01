@@ -8,12 +8,8 @@ body {
   scroll-behavior: smooth;
 }
 
-.content {
-  float: left;
-  height: 100%;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding-left: 5px;
+#webchat {
+  height: 100vh;
 }
 
 #webchat div[role="complementary"] {
