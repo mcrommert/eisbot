@@ -341,11 +341,9 @@ function selectOption(event) {
 function selectParentOption(event) {
   var children = event.target.parentNode.parentNode.childNodes;
   disableParentButtons(children, event.target.innerText);
-  //parentNode.parentNode
 }
 
 function adaptiveCardsOption(event) {
-  // var columnSet = $(event.target).closest(".ac-columnSet")[0];
   var columnSet = event.target.closest(".ac-columnSet");
   if (columnSet) {
     var buttonsInColumnSets = columnSet.childNodes;
@@ -360,17 +358,6 @@ function adaptiveCardsOption(event) {
     }
   }
 }
-// function grayButton(button) {
-//   button.style.backgroundColor = "#d9d9d9";
-//   button.style.color = "#ffffff";
-//   button.height = "37px";
-// }
-
-// function blueButton(button) {
-//   button.style.backgroundColor = DEFAULT_ACCENT;
-//   button.style.color = "white";
-//   button.height = "37px";
-// }
 
 function disableParentButtons(children, targetButton) {
   for (let i = 0; i < children.length; i++) {
@@ -386,12 +373,6 @@ function disableParentButtons(children, targetButton) {
     }
     if (children[i].nodeName === "BUTTON" && !alreadhClicked) {
       if (children[i].innerText) {
-        // if (children[i].innerText !== targetButton) {
-        //   grayButton(children[i]);
-        // } else {
-        //   blueButton(children[i]);
-        // }
-        // children[i].classList.remove("ac-pushButton");
         children[i].classList.add("disabled");
         setTimeout(function () {
           if (children[i] != null) {
@@ -429,17 +410,12 @@ function disableButtons(targetButton) {
   if (alreadyClicked) {
     return;
   }
-  // blueButton(targetButton);
   targetButton.classList.add("disabled");
   targetButton.parentNode.parentNode.parentNode.parentNode.style.cursor =
     "not-allowed";
   var allChildren = targetButton.parentNode.childNodes;
   for (let i = 0; i < allChildren.length; i++) {
     if (allChildren[i].innerText) {
-      if (allChildren[i].innerText !== targetButton.innerText) {
-        // grayButton(allChildren[i]);
-      }
-      // allChildren[i].classList.remove("ac-pushButton");
       allChildren[i].classList.add("disabled");
       allChildren[i].onclick = "null";
       allChildren[i].removeEventListener("click", selectOption);

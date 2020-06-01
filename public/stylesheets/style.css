@@ -24,6 +24,7 @@ body {
   border-radius: 8px;
   background-color: #af292e;
   color: #fff;
+  cursor: pointer;
 }
 
 #webchat button.ac-pushButton:hover {
@@ -37,6 +38,7 @@ body {
 #webchat button.ac-pushButton.disabled {
   background-color: #ddd;
   color: #bbb;
+  cursor: not-allowed;
 }
 
 /*
