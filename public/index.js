@@ -357,17 +357,17 @@ function disableParentButtons(children, targetButton) {
         break;
       }
     }
-    // if (children[i].nodeName === "BUTTON" && !alreadhClicked) {
-    //   if (children[i].innerText) {
-    //     children[i].classList.add("disabled");
-    //     setTimeout(function () {
-    //       if (children[i] != null) {
-    //         children[i].onclick = "null";
-    //       }
-    //     }, 50);
-    //     children[i].removeEventListener("click", selectOption);
-    //   }
-    // }
+    if (children[i].nodeName === "BUTTON" && !alreadhClicked) {
+      if (children[i].innerText) {
+        children[i].classList.add("disabled");
+        // setTimeout(function () {
+        //   if (children[i] != null) {
+        //     children[i].onclick = "null";
+        //   }
+        // }, 50);
+        // children[i].removeEventListener("click", selectOption);
+      }
+    }
   }
 }
 
