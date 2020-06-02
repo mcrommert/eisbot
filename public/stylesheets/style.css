@@ -17,6 +17,7 @@ body {
   background-color: #af292e;
   color: #fff;
   cursor: pointer;
+  flex-basis:auto!important;
 }
 
 #webchat button.ac-pushButton:hover {
