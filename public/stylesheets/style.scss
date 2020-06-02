@@ -25,6 +25,7 @@ body {
     background-color: $primaryColor;
     color: #fff;
     cursor: pointer;
+    flex-basis:auto!important;
 
     &:hover {
       background-color: darken($primaryColor, 10);
