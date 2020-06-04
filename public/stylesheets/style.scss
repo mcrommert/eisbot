@@ -1,0 +1,82 @@
+$primaryColor: #af292e;
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+// .content {
+//   float: left;
+//   height: 100%;
+//   align-items: flex-start;
+//   justify-content: flex-start;
+//   padding-left: 5px;
+// }
+
+#webchat {
+  height: calc(100vh - 40px);
+
+  button.ac-pushButton {
+    border-radius: 8px;
+    background-color: $primaryColor;
+    color: #fff;
+    cursor: pointer;
+    flex-basis:auto!important;
+
+    &:hover {
+      background-color: darken($primaryColor, 10);
+    }
+    &:active {
+      background-color: darken($primaryColor, 10);
+    }
+
+    &.disabled {
+      background-color: #ddd;
+      color: #bbb;
+      cursor: not-allowed;
+    }
+    div {
+      white-space: normal !important; // Temp fix for button wrapping caused by inline "nowrap" value.
+    }
+  }
+  .from-user.avatar {
+    background-color: #fff;
+    color: $primaryColor;
+    border: 2px solid $primaryColor;
+  }
+  .ac-textBlock {
+    overflow: visible !important;
+  }
+}
+
+#webchat [role="complementary"] ul[role="list"]::after {
+  content: "";
+  background: linear-gradient(
+    rgba(248, 248, 248, 0),
+    rgba(248, 248, 248, 0.63),
+    #f8f8f8 40%
+  );
+  bottom: 5;
+  right: 0;
+  color: #707070;
+  display: circle;
+  font-family: "Segoe Semibold", Calibri, "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+  padding: 15px 10px 10px;
+  position: fixed;
+  position: sticky;
+  text-align: right;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+#webchat .webchat__scrollToEndButton {
+  bottom: 32px;
+  left: 50%;
+  right: unset;
+  transform: translate(-50%, 0);
+}

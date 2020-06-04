@@ -1,62 +1,74 @@
-html, body {
+html,
+body {
   height: 100%;
 }
+
 body {
   margin: 0;
   scroll-behavior: smooth;
 }
 
-.content {
-  float: left;
-  height: 100%;
-  align-items: flex-start; 
-  justify-content: flex-start;
-  padding-left: 5px;
-}
-#webchat div[role="complementary"] {
-    padding-bottom: 0px;
+#webchat {
+  height: calc(100vh - 40px);
 }
 
-#webchat[] [role="complementary"] ul[role="list"]::after {
-  content: '';
-  background: linear-gradient(rgba(248, 248, 248, 0), rgba(248, 248, 248, .63), #F8F8F8 40%);
+#webchat button.ac-pushButton {
+  border-radius: 8px;
+  background-color: #af292e;
+  color: #fff;
+  cursor: pointer;
+  flex-basis:auto!important;
+}
+
+
+#webchat button.ac-pushButton:hover {
+  background-color: #861f23;
+}
+
+#webchat button.ac-pushButton:active {
+  background-color: #861f23;
+}
+
+#webchat button.ac-pushButton.disabled {
+  background-color: #ddd;
+  color: #bbb;
+  cursor: not-allowed;
+}
+
+#webchat button.ac-pushButton div {
+  white-space: normal !important;
+}
+
+#webchat .from-user.avatar {
+  background-color: #fff;
+  color: #af292e;
+  border: 2px solid #af292e;
+}
+
+#webchat .ac-textBlock {
+  overflow: visible !important;
+}
+
+#webchat [role="complementary"] ul[role="list"]::after {
+  content: "";
+  background: linear-gradient(rgba(248, 248, 248, 0), rgba(248, 248, 248, 0.63), #f8f8f8 40%);
   bottom: 5;
   right: 0;
   color: #707070;
   display: circle;
-  font-family: 'Segoe Semibold', Calibri, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Segoe Semibold", Calibri, "Helvetica Neue", Arial, sans-serif;
   font-size: 12px;
   padding: 15px 10px 10px;
   position: fixed;
   position: sticky;
   text-align: right;
-  align-items: flex-start; 
+  align-items: flex-start;
   justify-content: flex-start;
 }
-.speech-bubble {
-	position: relative;
-	background: #d02f80;
-	border-radius: .4em;
-}
 
-.speech-bubble:after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 50%;
-	width: 0;
-	height: 0;
-	border: 32px solid transparent;
-	border-bottom-color: #d02f80;
-	border-top: 0;
-	border-left: 0;
-	margin-left: -16px;
-	margin-top: -32px;
-}
-#webchat[] .webchat__scrollToEndButton {
+#webchat .webchat__scrollToEndButton {
   bottom: 32px;
   left: 50%;
   right: unset;
   transform: translate(-50%, 0);
 }
-
