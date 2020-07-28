@@ -260,8 +260,10 @@ function initBotConversation() {
   const store = window.WebChat.createStore({}, function (store) {
     return function (next) {
       return function (action) {
-        if (action.type === 'DIRECT_LINE/POST_ACTIVITY_FULFILLED') {
-            document.querySelector('ul[role="list"]').lastChild.scrollIntoView({behavior: 'smooth', block: 'start'});
+        if (action.type === "DIRECT_LINE/POST_ACTIVITY_FULFILLED") {
+          document
+            .querySelector('ul[role="list"]')
+            .lastChild.scrollIntoView({ behavior: "smooth", block: "start" });
         }
         if (action.type === "DIRECT_LINE/CONNECT_FULFILLED") {
           // Use the following activity to enable an authenticated end user experience
@@ -318,22 +320,30 @@ function startChat(user, webchatOptions) {
 //
 
 document.getElementById("webchat").addEventListener("click", function (event) {
-  selectOption(event);
-  adaptiveCardsOption(event);
-  selectParentOption(event);
+  let button = null;
+  if (event.target.tagName === "BUTTON") {
+    button = event.target;
+  } else if (event.target.parentElement.nodeName === "BUTTON") {
+    button = event.target.parentElement;
+  }
+  if (button !== null) {
+    selectOption(button);
+    adaptiveCardsOption(button);
+    selectParentOption(button);
+  }
 });
 
-function selectOption(event) {
-  disableButtons(event.target);
+function selectOption(target) {
+  disableButtons(target);
 }
 
-function selectParentOption(event) {
-  var children = event.target.parentNode.parentNode.childNodes;
-  disableParentButtons(children, event.target.innerText);
+function selectParentOption(target) {
+  var children = target.parentNode.parentNode.childNodes;
+  disableParentButtons(children, target.innerText);
 }
 
-function adaptiveCardsOption(event) {
-  var columnSet = event.target.closest(".ac-columnSet");
+function adaptiveCardsOption(target) {
+  var columnSet = target.closest(".ac-columnSet");
   if (columnSet) {
     var buttonsInColumnSets = columnSet.childNodes;
     for (let j = 0; j < buttonsInColumnSets.length; j++) {
@@ -341,7 +351,7 @@ function adaptiveCardsOption(event) {
       if (columnSetButtons) {
         disableParentButtons(
           columnSetButtons,
-          event.target.parentNode.parentNode.innerText
+          target.parentNode.parentNode.innerText
         );
       }
     }
