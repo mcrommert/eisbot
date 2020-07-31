@@ -80,3 +80,16 @@ body {
   right: unset;
   transform: translate(-50%, 0);
 }
+
+#restartButton {
+  background-color: $primaryColor;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  margin:0;
+  position:absolute;
+  left:45%;
+  width:100px;
+  height:30px;
+  font-weight:bold;
+}

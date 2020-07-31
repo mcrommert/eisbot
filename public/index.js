@@ -299,6 +299,14 @@ function initBotConversation() {
     };
   });
 
+  //sends the message "restart" to the chat window onclick of restartButton
+  document.querySelector('#restartButton').addEventListener('click', () => {
+    store.dispatch({
+        type: 'WEB_CHAT/SEND_MESSAGE',
+        payload: { text: 'restart' }
+    });
+  });
+
   const webchatOptions = {
     directLine: botConnection,
     store: store,
