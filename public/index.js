@@ -287,7 +287,7 @@ function initBotConversation() {
                 type: "invoke",
                 name: "TriggerScenario",
                 value: {
-                  trigger: "",
+                  trigger: "quest",
                   args: { region: region },
                 },
               },
