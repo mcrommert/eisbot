@@ -1,263 +1,286 @@
 function requestChatBot() {
-  const params = new URLSearchParams(location.search);
-  const oReq = new XMLHttpRequest();
-  oReq.addEventListener("load", initBotConversation);
-  var path = "/chatBot?";
-  if (params.has("userId")) {
-    path += "&userId=" + params.get("userId");
-  }
-  if (params.has("region")) {
-    path += "&region=" + params.get("region");
-  }
-  //if (loc) {
-  //     path += "&lat=" + loc.lat + "&long=" + loc.long;
-  //  }
-  oReq.open("POST", path);
-  oReq.send();
-}
-//function chatRequested() {
-//  const params = new URLSearchParams(location.search);
-//if (params.has('shareLocation')) {
-//  getUserLocation(requestChatBot);
-//}
-//else {
-//  requestChatBot();
-//}
-//}
-//function getUserLocation(callback) {
-//  navigator.geolocation.getCurrentPosition(
-//    function(position) {
-//      var latitude  = position.coords.latitude;
-//    var longitude = position.coords.longitude;
-//  var location = {
-//    lat: latitude,
-//  long: longitude
-//  }
-//callback(location);
-//},
-//  function(error) {
-// user declined to share location
-//  console.log("location error:" + error.message);
-//   callback();
-// });
-//}
-//Suggestion for document referrer location
-//function getParentUrl() {
-//  var isInIframe = (parent !== window),
-//    parentUrl = null;
-//if (isInIframe) {
-//  parentUrl = document.referrer;
-//}
-//return parentUrl;
-//}
-function initBotConversation() {
-  if (this.status >= 400) {
-    alert(this.statusText);
-    return;
-  }
-  // extract the data from the JWT
-  const jsonWebToken = this.response;
-  const tokenPayload = JSON.parse(atob(jsonWebToken.split(".")[1]));
-  const user = {
-    id: tokenPayload.userId,
-    name: tokenPayload.userName,
-  };
-  let domain = undefined;
-  if (tokenPayload.directLineURI) {
-    domain = "https://" + tokenPayload.directLineURI + "/v3/directline";
-  }
-  let region = undefined;
-  if (tokenPayload.region) {
-    region = tokenPayload.region;
-  }
-  var botConnection = window.WebChat.createDirectLine({
-    token: tokenPayload.connectorToken,
-    domain: domain,
-  });
+	  const params = new URLSearchParams(location.search);
+	  const oReq = new XMLHttpRequest();
+	  oReq.addEventListener("load", initBotConversation);
+	  var path = "/chatBot?";
+	  if (params.has("userId")) {
+	    path += "&userId=" + params.get("userId");
+	  }
+	  if (params.has("region")) {
+	    path += "&region=" + params.get("region");
+	  }
+	  //if (loc) {
+	  //     path += "&lat=" + loc.lat + "&long=" + loc.long;
+	  //  }
+	  oReq.open("POST", path);
+	  oReq.send();
+	}
+	//function chatRequested() {
+	//  const params = new URLSearchParams(location.search);
+	//if (params.has('shareLocation')) {
+	//  getUserLocation(requestChatBot);
+	//}
+	//else {
+	//  requestChatBot();
+	//}
+	//}
+	//function getUserLocation(callback) {
+	//  navigator.geolocation.getCurrentPosition(
+	//    function(position) {
+	//      var latitude  = position.coords.latitude;
+	//    var longitude = position.coords.longitude;
+	//  var location = {
+	//    lat: latitude,
+	//  long: longitude
+	//  }
+	//callback(location);
+	//},
+	//  function(error) {
+	// user declined to share location
+	//  console.log("location error:" + error.message);
+	//   callback();
+	// });
+	//}
+	//Suggestion for document referrer location
+	//function getParentUrl() {
+	//  var isInIframe = (parent !== window),
+	//    parentUrl = null;
+	//if (isInIframe) {
+	//  parentUrl = document.referrer;
+	//}
+	//return parentUrl;
+	//}
+	function initBotConversation() {
+	  if (this.status >= 400) {
+	    alert(this.statusText);
+	    return;
+	  }
+	  // extract the data from the JWT
+	  const jsonWebToken = this.response;
+	  const tokenPayload = JSON.parse(atob(jsonWebToken.split(".")[1]));
+	  const user = {
+	    id: tokenPayload.userId,
+	    name: tokenPayload.userName,
+	  };
+	  let domain = undefined;
+	  if (tokenPayload.directLineURI) {
+	    domain = "https://" + tokenPayload.directLineURI + "/v3/directline";
+	  }
+	  let region = undefined;
+	  if (tokenPayload.region) {
+	    region = tokenPayload.region;
+	  }
+	  var botConnection = window.WebChat.createDirectLine({
+	    token: tokenPayload.connectorToken,
+	    domain: domain,
+	  });
+	
 
-  // const DEFAULT_ACCENT = "#0063B1";
-  const DEFAULT_ACCENT = "#AF292E";
-  const DEFAULT_SUBTLE = "#767676"; // With contrast 4.5:1 to white
-  const PADDING_REGULAR = 10;
+	  // const DEFAULT_ACCENT = " #A5D687";
+	  const DEFAULT_ACCENT = "#A5D687";
+	  const DEFAULT_SUBTLE = "#702082"; // With contrast 4.5:1 to white
+	  const PADDING_REGULAR = 10;
+	
 
-  const styleOptions = {
-    // Color and paddings
-    accent: DEFAULT_ACCENT,
-    backgroundColor: "#F8F8F8",
-    cardEmphasisBackgroundColor: "#F0F0F0",
-    paddingRegular: PADDING_REGULAR,
-    paddingWide: PADDING_REGULAR * 2,
-    subtle: DEFAULT_SUBTLE,
+	  const styleOptions = {
+	    // Color and paddings
+	    accent: DEFAULT_ACCENT,
+	    backgroundColor: "#FFFFFF",
+	    cardEmphasisBackgroundColor: "#F0F0F0",
+	    paddingRegular: PADDING_REGULAR,
+	    paddingWide: PADDING_REGULAR * 2,
+	    subtle: DEFAULT_SUBTLE,
+	
 
-    // Word break
-    messageActivityWordBreak: "break-word", // 'normal' || 'break-all' || 'break-word' || 'keep-all'
+	    // Word break
+	    messageActivityWordBreak: "break-word", // 'normal' || 'break-all' || 'break-word' || 'keep-all'
+	
 
-    // Fonts
-    fontSizeSmall: "80%",
-    monospaceFont: "Consolas, Courier New, monospace",
-    primaryFont: "Calibri, Helvetica Neue, Arial, sans-serif",
+	    // Fonts
+	    fontSizeSmall: "80%",
+	    monospaceFont: "Consolas, Courier New, monospace",
+	    primaryFont: "Calibri, Helvetica Neue, Arial, sans-serif",
+	
 
-    // Avatar
-    avatarBorderRadius: "50%",
-    avatarSize: 40,
-    botAvatarBackgroundColor: undefined, // defaults to accent color
+	    // Avatar
+	    avatarBorderRadius: "50%",
+	    avatarSize: 40,
+	    botAvatarBackgroundColor: undefined, // defaults to accent color
+	    botAvatarImage: "",
+	    botAvatarInitials: "C",
+  	    userAvatarBackgroundColor: "#A5D687", // defaults to accent color
+	    userAvatarImage: "",
+	    userAvatarInitials: "You",
+	    // Bubble
+	    // TODO: Should we make a bubbleFromBot*
+	    bubbleBackground: "White",
+	    bubbleBorderColor: "#A5D687",
+	    bubbleBorderRadius: 2,
+	    bubbleBorderStyle: "solid",
+	    bubbleBorderWidth: 1,
+	    bubbleFromUserBackground: "White",
+	    bubbleFromUserBorderColor: "#A5D687",
+	    bubbleFromUserBorderRadius: 2,
+	    bubbleFromUserBorderStyle: "solid",
+	    bubbleFromUserBorderWidth: 1,
+	    bubbleFromUserNubOffset: "bottom",
+	    bubbleFromUserNubSize: 0,
+	    bubbleFromUserTextColor: "Black",
+	    bubbleImageHeight: 240,
+	    bubbleMaxWidth: 480, // screen width = 600px
+	    bubbleMinHeight: 40,
+	    bubbleMinWidth: 250, // min screen width = 300px, Edge requires 372px (https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/13621468/)
+	    bubbleNubOffset: "bottom",
+	    bubbleNubSize: 0,
+	    bubbleTextColor: "Black",
+	
 
-    botAvatarImage: "",
-    botAvatarInitials: "C",
-    userAvatarBackgroundColor: undefined, // defaults to accent color
-    userAvatarImage: "",
-    userAvatarInitials: "You",
-    // Bubble
-    // TODO: Should we make a bubbleFromBot*
-    bubbleBackground: "White",
-    bubbleBorderColor: "#E6E6E6",
-    bubbleBorderRadius: 2,
-    bubbleBorderStyle: "solid",
-    bubbleBorderWidth: 1,
-    bubbleFromUserBackground: "White",
-    bubbleFromUserBorderColor: "#E6E6E6",
-    bubbleFromUserBorderRadius: 2,
-    bubbleFromUserBorderStyle: "solid",
-    bubbleFromUserBorderWidth: 1,
-    bubbleFromUserNubOffset: "bottom",
-    bubbleFromUserNubSize: 0,
-    bubbleFromUserTextColor: "Black",
-    bubbleImageHeight: 240,
-    bubbleMaxWidth: 480, // screen width = 600px
-    bubbleMinHeight: 40,
-    bubbleMinWidth: 250, // min screen width = 300px, Edge requires 372px (https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/13621468/)
-    bubbleNubOffset: "bottom",
-    bubbleNubSize: 0,
-    bubbleTextColor: "Black",
+	    // Markdown
+	    markdownRespectCRLF: true,
+	
 
-    // Markdown
-    markdownRespectCRLF: true,
+	    // Rich Cards
+	    richCardWrapTitle: true, // Applies to subtitles as well
+	
 
-    // Rich Cards
-    richCardWrapTitle: true, // Applies to subtitles as well
+	    // Root
+	    rootHeight: "100%",
+	    rootWidth: "100%",
+	    rootZIndex: 0, // "z-index" for the root container of Web Chat. This will form a new stacking context so "z-index" used in children won't pollute.
+	
 
-    // Root
-    rootHeight: "100%",
-    rootWidth: "100%",
-    rootZIndex: 0, // "z-index" for the root container of Web Chat. This will form a new stacking context so "z-index" used in children won't pollute.
+	    // Scroll to end button
+	    hideScrollToEndButton: false,
+	
 
-    // Scroll to end button
-    hideScrollToEndButton: false,
+	    // Send box
+	    hideSendBox: false,
+	    hideUploadButton: true,
+	    microphoneButtonColorOnDictate: "#F33",
+	    sendBoxBackground: "White",
+	    sendBoxButtonColor: undefined, // defaults to subtle
+	    sendBoxButtonColorOnDisabled: "#CCC",
+	    sendBoxButtonColorOnFocus: "#333",
+	    sendBoxButtonColorOnHover: "#333",
+	    sendBoxDisabledTextColor: undefined, // defaults to subtle
+	    sendBoxHeight: 40,
+	    sendBoxMaxHeight: 200,
+	    sendBoxTextColor: "Black",
+	    // TODO: We should deprecate this because there isn't an easy way to make the width of the send box, narrower than the transcript
+	    sendBoxBorderBottom: "",
+	    sendBoxBorderLeft: "",
+	    sendBoxBorderRight: "",
+	    sendBoxBorderTop: "solid 1px #E6E6E6",
+	    sendBoxPlaceholderColor: undefined, // defaults to subtle
+	    sendBoxTextWrap: false,
+	
 
-    // Send box
-    hideSendBox: false,
-    hideUploadButton: true,
-    microphoneButtonColorOnDictate: "#F33",
-    sendBoxBackground: "White",
-    sendBoxButtonColor: undefined, // defaults to subtle
-    sendBoxButtonColorOnDisabled: "#CCC",
-    sendBoxButtonColorOnFocus: "#333",
-    sendBoxButtonColorOnHover: "#333",
-    sendBoxDisabledTextColor: undefined, // defaults to subtle
-    sendBoxHeight: 40,
-    sendBoxMaxHeight: 200,
-    sendBoxTextColor: "Black",
-    // TODO: We should deprecate this because there isn't an easy way to make the width of the send box, narrower than the transcript
-    sendBoxBorderBottom: "",
-    sendBoxBorderLeft: "",
-    sendBoxBorderRight: "",
-    sendBoxBorderTop: "solid 1px #E6E6E6",
-    sendBoxPlaceholderColor: undefined, // defaults to subtle
-    sendBoxTextWrap: false,
+	    // Visually show spoken text
+	    showSpokenText: false,
+	
 
-    // Visually show spoken text
-    showSpokenText: false,
+	    // Suggested actions
+	    suggestedActionBackground: "White",
+	    suggestedActionBorder: undefined, // split into 3, null
+	    suggestedActionBorderColor: undefined, // defaults to accent
+	    suggestedActionBorderRadius: 0,
+	    suggestedActionBorderStyle: "solid",
+	    suggestedActionBorderWidth: 2,
+	    suggestedActionDisabledBackground: undefined, // defaults to suggestedActionBackground
+	    suggestedActionDisabledBorder: null,
+	    suggestedActionDisabledBorderColor: "#E6E6E6",
+	    suggestedActionDisabledBorderStyle: "solid",
+	    suggestedActionDisabledBorderWidth: 2,
+	    suggestedActionDisabledTextColor: undefined, // defaults to subtle
+	    suggestedActionHeight: 40,
+	    suggestedActionImageHeight: 20,
+	    suggestedActionLayout: "carousel", // either "carousel" or "stacked"
+	    suggestedActionTextColor: null,
+	
 
-    // Suggested actions
-    suggestedActionBackground: "White",
-    suggestedActionBorder: undefined, // split into 3, null
-    suggestedActionBorderColor: undefined, // defaults to accent
-    suggestedActionBorderRadius: 0,
-    suggestedActionBorderStyle: "solid",
-    suggestedActionBorderWidth: 2,
-    suggestedActionDisabledBackground: undefined, // defaults to suggestedActionBackground
-    suggestedActionDisabledBorder: null,
-    suggestedActionDisabledBorderColor: "#E6E6E6",
-    suggestedActionDisabledBorderStyle: "solid",
-    suggestedActionDisabledBorderWidth: 2,
-    suggestedActionDisabledTextColor: undefined, // defaults to subtle
-    suggestedActionHeight: 40,
-    suggestedActionImageHeight: 20,
-    suggestedActionLayout: "carousel", // either "carousel" or "stacked"
-    suggestedActionTextColor: null,
+	    // Timestamp
+	    groupTimestamp: true,
+	    sendTimeout: 20000,
+	    sendTimeoutForAttachments: 120000,
+	    timestampColor: undefined, // defaults to subtle
+	    timestampFormat: "relative", // 'absolute'
+	
 
-    // Timestamp
-    groupTimestamp: true,
-    sendTimeout: 20000,
-    sendTimeoutForAttachments: 120000,
-    timestampColor: undefined, // defaults to subtle
-    timestampFormat: "relative", // 'absolute'
+	    // Transcript overlay buttons (e.g. carousel and suggested action flippers, scroll to bottom, etc.)
+	    transcriptOverlayButtonBackground: "rgba(0, 0, 0, .6)",
+	    transcriptOverlayButtonBackgroundOnFocus: "rgba(0, 0, 0, .8)",
+	    transcriptOverlayButtonBackgroundOnHover: "rgba(0, 0, 0, .8)",
+	    transcriptOverlayButtonColor: "White",
+	    transcriptOverlayButtonColorOnFocus: undefined, // defaults to transcriptOverlayButtonColor
+	    transcriptOverlayButtonColorOnHover: undefined, // defaults to transcriptOverlayButtonColor
+	
 
-    // Transcript overlay buttons (e.g. carousel and suggested action flippers, scroll to bottom, etc.)
-    transcriptOverlayButtonBackground: "rgba(0, 0, 0, .6)",
-    transcriptOverlayButtonBackgroundOnFocus: "rgba(0, 0, 0, .8)",
-    transcriptOverlayButtonBackgroundOnHover: "rgba(0, 0, 0, .8)",
-    transcriptOverlayButtonColor: "White",
-    transcriptOverlayButtonColorOnFocus: undefined, // defaults to transcriptOverlayButtonColor
-    transcriptOverlayButtonColorOnHover: undefined, // defaults to transcriptOverlayButtonColor
+	    // Video
+	    videoHeight: 270, // based on bubbleMaxWidth, 480 / 16 * 9 = 270
+	
 
-    // Video
-    videoHeight: 270, // based on bubbleMaxWidth, 480 / 16 * 9 = 270
+	    // Connectivity UI
+	    connectivityIconPadding: PADDING_REGULAR * 1.2,
+	    connectivityMarginLeftRight: PADDING_REGULAR * 1.4,
+	    connectivityMarginTopBottom: PADDING_REGULAR * 0.8,
+	    connectivityTextSize: "75%",
+	    failedConnectivity: "#C50F1F",
+	    slowConnectivity: "#EAA300",
+	    notificationText: "#5E5E5E",
+	    slowConnectionAfter: 15000,
+	
 
-    // Connectivity UI
-    connectivityIconPadding: PADDING_REGULAR * 1.2,
-    connectivityMarginLeftRight: PADDING_REGULAR * 1.4,
-    connectivityMarginTopBottom: PADDING_REGULAR * 0.8,
-    connectivityTextSize: "75%",
-    failedConnectivity: "#C50F1F",
-    slowConnectivity: "#EAA300",
-    notificationText: "#5E5E5E",
-    slowConnectionAfter: 15000,
+	    typingAnimationBackgroundImage: null,
+	    typingAnimationDuration: 5000,
+	    typingAnimationHeight: 20,
+	    typingAnimationWidth: 64,
+	
 
-    typingAnimationBackgroundImage: null,
-    typingAnimationDuration: 5000,
-    typingAnimationHeight: 20,
-    typingAnimationWidth: 64,
+	    spinnerAnimationBackgroundImage: null,
+	    spinnerAnimationHeight: 16,
+	    spinnerAnimationWidth: 16,
+	    spinnerAnimationPadding: 12,
+	
 
-    spinnerAnimationBackgroundImage: null,
-    spinnerAnimationHeight: 16,
-    spinnerAnimationWidth: 16,
-    spinnerAnimationPadding: 12,
+	    enableUploadThumbnail: true,
+	    uploadThumbnailContentType: "image/jpeg",
+	    uploadThumbnailHeight: 360,
+	    uploadThumbnailQuality: 0.6,
+	    uploadThumbnailWidth: 720,
+	
 
-    enableUploadThumbnail: true,
-    uploadThumbnailContentType: "image/jpeg",
-    uploadThumbnailHeight: 360,
-    uploadThumbnailQuality: 0.6,
-    uploadThumbnailWidth: 720,
+	    // deprecated; will be removed on or after 2021-02-01
+	    spinnerAnimationPaddingRight: undefined,
+	
 
-    // deprecated; will be removed on or after 2021-02-01
-    spinnerAnimationPaddingRight: undefined,
+	    // Toast UI
+	
 
-    // Toast UI
+	    // New debounce timeout value only affect new notifications.
+	    notificationDebounceTimeout: 400,
+	
 
-    // New debounce timeout value only affect new notifications.
-    notificationDebounceTimeout: 400,
+	    hideToaster: false,
+	    toasterHeight: 32,
+	    toasterMaxHeight: 32 * 5,
+	    toasterSingularMaxHeight: 50,
+	    toastFontSize: "87.5%",
+	    toastIconWidth: 36,
+	    toastSeparatorColor: "#E8EAEC",
+	    toastTextPadding: 6,
+	
 
-    hideToaster: false,
-    toasterHeight: 32,
-    toasterMaxHeight: 32 * 5,
-    toasterSingularMaxHeight: 50,
-    toastFontSize: "87.5%",
-    toastIconWidth: 36,
-    toastSeparatorColor: "#E8EAEC",
-    toastTextPadding: 6,
-
-    toastErrorBackgroundColor: "#FDE7E9",
-    toastErrorColor: "#A80000",
-    toastInfoBackgroundColor: "#CEF1FF",
-    toastInfoColor: "#105E7D",
-    toastSuccessBackgroundColor: "#DFF6DD",
-    toastSuccessColor: "#107C10",
-    toastWarnBackgroundColor: "#FFF4CE",
-    toastWarnColor: "#3B3A39",
-  };
-
-  const store = window.WebChat.createStore({}, function (store) {
+	    toastErrorBackgroundColor: "#FDE7E9",
+	    toastErrorColor: "#A80000",
+	    toastInfoBackgroundColor: "#CEF1FF",
+	    toastInfoColor: "#105E7D",
+	    toastSuccessBackgroundColor: "#DFF6DD",
+	    toastSuccessColor: "#107C10",
+	    toastWarnBackgroundColor: "#FFF4CE",
+	    toastWarnColor: "#3B3A39",
+	  };
+		
+const store = window.WebChat.createStore({}, function (store) {
     return function (next) {
       return function (action) {
         if (action.type === "DIRECT_LINE/POST_ACTIVITY_FULFILLED") {
@@ -298,15 +321,15 @@ function initBotConversation() {
       };
     };
   });
+//sends the message "restart" to the chat window onclick of restartButton
+        document.querySelector('#restartButton').addEventListener('click', () => {
+        store.dispatch({
+		      	type: 'WEB_CHAT/SEND_MESSAGE',
+		      	payload: { text: 'restart' }
+        });
+        });
 
-  //sends the message "restart" to the chat window onclick of restartButton
-  document.querySelector('#restartButton').addEventListener('click', () => {
-    store.dispatch({
-        type: 'WEB_CHAT/SEND_MESSAGE',
-        payload: { text: 'restart' }
-    });
-  });
-
+		
   const webchatOptions = {
     directLine: botConnection,
     store: store,
