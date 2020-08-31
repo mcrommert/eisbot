@@ -14,18 +14,18 @@ body {
 
 #webchat button.ac-pushButton {
   border-radius: 8px;
-  background-color: #af292e;
-  color: #fff;
+  background-color: #A5D687;
+  color: #702082;
   cursor: pointer;
   flex-basis:auto!important;
 }
 
 #webchat button.ac-pushButton:hover {
-  background-color: #861f23;
+  background-color: #7eb45d;
 }
 
 #webchat button.ac-pushButton:active {
-  background-color: #861f23;
+  background-color: #7eb45d;
 }
 
 #webchat button.ac-pushButton.disabled {
@@ -39,9 +39,9 @@ body {
 }
 
 #webchat .from-user.avatar {
-  background-color: #fff;
-  color: #af292e;
-  border: 2px solid #af292e;
+  background-color: #702082;
+  color: #fff;
+  border: 2px solid #702082;
 }
 
 #webchat .ac-textBlock {
@@ -73,8 +73,8 @@ body {
 }
 
 #restartButton {
-  background-color:#af292e;
-  color: #fff;
+  background-color: #A5D687;
+  color: #702082;
   border-radius: 8px;
   cursor: pointer;
   margin:0;
